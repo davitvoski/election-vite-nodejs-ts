@@ -1,0 +1,200 @@
+[
+  {
+    "numeroPartiPolitique": 27,
+    "nomPartiPolitique": "Coalition avenir Québec - L\u0027équipe François Legault",
+    "abreviationPartiPolitique": "C.A.Q.-E.F.L.",
+    "nbVoteTotal": 1685573,
+    "tauxVoteTotal": 40.9834,
+    "nbCirconscriptionsEnAvance": 90,
+    "tauxCirconscriptionsEnAvance": 72.0
+  },
+  {
+    "numeroPartiPolitique": 6,
+    "nomPartiPolitique": "Parti libéral du Québec/Quebec Liberal Party",
+    "abreviationPartiPolitique": "P.L.Q./Q.L.P.",
+    "nbVoteTotal": 591077,
+    "tauxVoteTotal": 14.3716,
+    "nbCirconscriptionsEnAvance": 21,
+    "tauxCirconscriptionsEnAvance": 16.8
+  },
+  {
+    "numeroPartiPolitique": 40,
+    "nomPartiPolitique": "Québec solidaire",
+    "abreviationPartiPolitique": "Q.S.",
+    "nbVoteTotal": 634535,
+    "tauxVoteTotal": 15.4282,
+    "nbCirconscriptionsEnAvance": 11,
+    "tauxCirconscriptionsEnAvance": 8.8
+  },
+  {
+    "numeroPartiPolitique": 8,
+    "nomPartiPolitique": "Parti québécois",
+    "abreviationPartiPolitique": "P.Q.",
+    "nbVoteTotal": 600708,
+    "tauxVoteTotal": 14.6057,
+    "nbCirconscriptionsEnAvance": 3,
+    "tauxCirconscriptionsEnAvance": 2.4
+  },
+  {
+    "numeroPartiPolitique": 22,
+    "nomPartiPolitique": "Parti conservateur du Québec - Équipe Éric Duhaime",
+    "abreviationPartiPolitique": "P.C.Q-E.E.D.",
+    "nbVoteTotal": 530786,
+    "tauxVoteTotal": 12.9056,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 10,
+    "nomPartiPolitique": "Parti vert du Québec/Green Party of Québec",
+    "abreviationPartiPolitique": "P.V.Q./G.P.Q.",
+    "nbVoteTotal": 31054,
+    "tauxVoteTotal": 0.7551,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99263,
+    "nomPartiPolitique": "Parti canadien du Québec / Canadian Party of Québec",
+    "abreviationPartiPolitique": "P.C.Q./C.P.Q",
+    "nbVoteTotal": 12981,
+    "tauxVoteTotal": 0.3156,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99237,
+    "nomPartiPolitique": "Climat Québec",
+    "abreviationPartiPolitique": "C.Q.",
+    "nbVoteTotal": 8644,
+    "tauxVoteTotal": 0.2102,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99285,
+    "nomPartiPolitique": "Bloc Montréal - Équipe Balarama Holness",
+    "abreviationPartiPolitique": "B.M.-E.B.H.",
+    "nbVoteTotal": 7774,
+    "tauxVoteTotal": 0.189,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99286,
+    "nomPartiPolitique": "Démocratie directe",
+    "abreviationPartiPolitique": "D.D.",
+    "nbVoteTotal": 2421,
+    "tauxVoteTotal": 0.0589,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 0,
+    "nomPartiPolitique": "Candidats indépendants/Independent candidates",
+    "abreviationPartiPolitique": "Ind.",
+    "nbVoteTotal": 2121,
+    "tauxVoteTotal": 0.0516,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 23,
+    "nomPartiPolitique": "Parti nul",
+    "abreviationPartiPolitique": "P.N.",
+    "nbVoteTotal": 1074,
+    "tauxVoteTotal": 0.0261,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99275,
+    "nomPartiPolitique": "L\u0027union fait la force",
+    "abreviationPartiPolitique": "U.F.F.",
+    "nbVoteTotal": 1042,
+    "tauxVoteTotal": 0.0253,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 37,
+    "nomPartiPolitique": "Parti 51",
+    "abreviationPartiPolitique": "P51",
+    "nbVoteTotal": 689,
+    "tauxVoteTotal": 0.0168,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 7,
+    "nomPartiPolitique": "Parti marxiste-léniniste du Québec",
+    "abreviationPartiPolitique": "P.M.L.Q.",
+    "nbVoteTotal": 675,
+    "tauxVoteTotal": 0.0164,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 29,
+    "nomPartiPolitique": "Équipe autonomiste",
+    "abreviationPartiPolitique": "E.A.",
+    "nbVoteTotal": 556,
+    "tauxVoteTotal": 0.0135,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 42,
+    "nomPartiPolitique": "Parti culinaire du Québec",
+    "abreviationPartiPolitique": "P.Cu.Q.",
+    "nbVoteTotal": 356,
+    "tauxVoteTotal": 0.0087,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99281,
+    "nomPartiPolitique": "Parti humain du Québec",
+    "abreviationPartiPolitique": "P.H.Q.",
+    "nbVoteTotal": 262,
+    "tauxVoteTotal": 0.0064,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99209,
+    "nomPartiPolitique": "Union nationale",
+    "abreviationPartiPolitique": "U.N.",
+    "nbVoteTotal": 159,
+    "tauxVoteTotal": 0.0039,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99293,
+    "nomPartiPolitique": "Alliance pour la famille et les communautés",
+    "abreviationPartiPolitique": "A.F.C.",
+    "nbVoteTotal": 148,
+    "tauxVoteTotal": 0.0036,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99291,
+    "nomPartiPolitique": "Parti libertarien du Québec",
+    "abreviationPartiPolitique": "P.Li.Q.",
+    "nbVoteTotal": 116,
+    "tauxVoteTotal": 0.0028,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  },
+  {
+    "numeroPartiPolitique": 99236,
+    "nomPartiPolitique": "Parti accès propriété et équité",
+    "abreviationPartiPolitique": "P.A.P.E.",
+    "nbVoteTotal": 70,
+    "tauxVoteTotal": 0.0017,
+    "nbCirconscriptionsEnAvance": 0,
+    "tauxCirconscriptionsEnAvance": 0.0
+  }
+]
