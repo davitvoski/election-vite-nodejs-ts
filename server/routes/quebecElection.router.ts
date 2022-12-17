@@ -1,5 +1,6 @@
 import * as express from "express"
 import { getCirconscriptionVoteDetails, getTopoJsonData } from "../controller/quebec/quebecElection.controller"
+
 const router = express.Router()
 
 
