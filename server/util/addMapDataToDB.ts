@@ -1,5 +1,7 @@
 import DB from "../db/db"
 import * as fs from "fs/promises"
+import { ITopoJson } from "../interfaces/json/interfaceTopoJson"
+import { ICirconscription } from "../interfaces/json/interfaceCirconscription"
 
 const collectionName = "TopoJsonSimpleMaps"
 
