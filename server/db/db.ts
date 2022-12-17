@@ -1,5 +1,5 @@
 import dotenv from "dotenv"
-dotenv.config({ path: "../../.env" })
+dotenv.config({ path: "./../.env"})
 import * as mongoDB from "mongodb"
 
 const dbUrl: string = process.env.ATLAS_URI as string
@@ -18,6 +18,11 @@ class DB {
             this.db = this.client.db(dbName)
         }
         return DB.instance
+    }
+
+    async getCollection(collectionName: string) {
+        const collection = this.db.collection(collectionName)
+        return collection
     }
 
     async dropAndCreateCollection(collectionName: string) {
