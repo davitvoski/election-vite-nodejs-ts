@@ -1,5 +1,5 @@
 
-declare interface ICirconscription {
+export interface ICirconscription {
     numeroCirconscription: number;
     nomCirconscription: string;
     iso8601DateMAJ: typeof Iso8601DateMAJ;
@@ -15,7 +15,7 @@ declare interface ICirconscription {
     candidats: Candidat[];
 }
 
-declare interface Candidat {
+export interface Candidat {
     numeroCandidat: number;
     nom: string;
     prenom: string;
@@ -26,7 +26,7 @@ declare interface Candidat {
     nbVoteAvance: number;
 }
 
-declare const AbreviationPartiPolitique = {
+export const AbreviationPartiPolitique = {
     AFC: "A.F.C.",
     BMEBH: "B.M.-E.B.H.",
     CAQEFL: "C.A.Q.-E.F.L.",
@@ -51,6 +51,6 @@ declare const AbreviationPartiPolitique = {
     UN: "U.N.",
 } as const
 
-declare const Iso8601DateMAJ = {
+export const Iso8601DateMAJ = {
     The20221006T1155412440400: "2022-10-06T11:55:41,244-04:00",
 } as const
