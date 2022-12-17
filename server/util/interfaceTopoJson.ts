@@ -17,20 +17,15 @@ export interface Circonscriptions {
 
 export interface Geometry {
     arcs: Array<Array<number[] | number>>;
-    type: Type;
+    type: keyof typeof Type;
     properties: { [key: string]: any }
 }
 
-// export interface Properties {
-//     CO_CEP:    number;
-//     NM_CEP:    string;
-//     NMTRI_CEP: string;
-// }
 
-export enum Type {
-    MultiPolygon = "MultiPolygon",
-    Polygon = "Polygon",
-}
+export const Type =  {
+    MultiPolygon: "MultiPolygon",
+    Polygon: "Polygon",
+} as const
 
 export interface Transform {
     scale: number[];

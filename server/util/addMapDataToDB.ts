@@ -21,7 +21,7 @@ const PartyColors: IPartyColors = {
 
 /**
  * This function adds the color of the winner in the region to the topoJson circoncription data
- * @param {Object} topoJson 
+ * @param {ITopoJson} topoJson 
  */
 async function addWinnersColor(topoJson: ITopoJson) {
     // Read topoJson file
@@ -50,11 +50,11 @@ async function addWinnersColor(topoJson: ITopoJson) {
 
 /**
  * This function saves the Cleaned topoJson data to MongoDB
- * @file [./data/circoCleaned.json]
+ * @file [./data/topoJsonSimpleMaps.json]
  */
 async function savetopojsonToDB() {
     // Read topoJson file
-    let rawData = await fs.readFile('../data/topJsonSimpleMaps.json')
+    let rawData = await fs.readFile('../data/topoJsonSimpleMaps.json')
     let topoJson: ITopoJson = JSON.parse(rawData.toString());
     console.log("GOT JSON")
     await addWinnersColor(topoJson)
