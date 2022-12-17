@@ -21,7 +21,7 @@ async function getCircoDataFromMongo(numeroCIRCO: string): Promise<ICirconscript
         // Get Collection
         const collection = await db.getCollection(collectionCiro)
         // Get Data
-        const circonscription = await collection.find({numeroCirconscription: Number(numeroCIRCO)}).toArray()
+        const circonscription = await collection.find({ numeroCirconscription: Number(numeroCIRCO) }, { projection: { _id: 0 } }).toArray()
         const data = circonscription[0] as unknown as ICirconscription
         return data
     } catch (err) {
@@ -47,4 +47,15 @@ async function getTopoJsonDataFromMongo(): Promise<ITopoJson> {
     }
 }
 
-export { getCircoDataFromMongo, getTopoJsonDataFromMongo }
+async function getAllCirconscriptionFromMongo(): Promise<ICirconscription[]> {
+    try {
+        // Get Collection
+        const collection = await db.getCollection(collectionCiro)
+        const allCirconscription = await collection.find({}, { projection: { _id: 0 } }).toArray() as unknown as ICirconscription[]
+        return allCirconscription
+    } catch (err) {
+        throw new Error(err as string)
+    }
+}
+
+export { getCircoDataFromMongo, getTopoJsonDataFromMongo, getAllCirconscriptionFromMongo }
