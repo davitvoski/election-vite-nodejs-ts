@@ -31,7 +31,7 @@ class DB {
         await this.db.createCollection(collectionName)
     }
 
-    async insertManyCollection(collectionName: string, data: any[]) {
+    async insertManyToCollection(collectionName: string, data: any[]) {
         const collection = this.db.collection(collectionName)
         const result = await collection.insertMany(data)
         return result
