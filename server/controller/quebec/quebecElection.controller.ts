@@ -1,8 +1,8 @@
 import * as express from "express"
-import * as redis from "redis"
 import { Candidat } from "../../interfaces/json/interfaceCirconscription"
 import { getCircoDataFromMongo, getTopoJsonDataFromMongo } from "./database.controller"
-
+import { redisClient } from "../../app"
+import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
 
 /**
  * This method gets the TopoJson data from MongoDB to visualize the map
@@ -11,13 +11,18 @@ import { getCircoDataFromMongo, getTopoJsonDataFromMongo } from "./database.cont
  */
 async function getTopoJsonData(_: express.Request, res: express.Response) {
     try {
-        let topoJson //= cache.get("topoJson");
-        if (!topoJson) {
+        let topoJson: string | null | ITopoJson = await redisClient.get("Quebec_Map")
+        if (topoJson == null) {
+            console.log("TOPOJSON NO CAHCE")
             // Get Data From Database
             topoJson = await getTopoJsonDataFromMongo()
-            // TODO: Add cache
-            // Cache Data
-            // cache.put("topoJson", topoJson)
+            // Cache map
+            redisClient.set("Quebec_Map", JSON.stringify(topoJson), {
+                EX: 60 * 60 * 24,
+                NX: true
+            })
+        } else {
+            topoJson = JSON.parse(topoJson)
         }
         res.status(200).json(topoJson)
     } catch (err) {

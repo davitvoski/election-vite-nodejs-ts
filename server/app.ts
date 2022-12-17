@@ -5,7 +5,7 @@ import compression from "compression"
 import * as redis from "redis"
 import quebecElectionRouter from "./routes/quebecElection.router"
 
-const redisClient = redis.createClient({ 
+const redisClient = redis.createClient({
     url: "redis://default:fRMAbrfGsCIQx1GGjMRfBYpZiQcfADoQ@redis-14640.c10.us-east-1-3.ec2.cloud.redislabs.com:14640"
 });
 (async () => {
