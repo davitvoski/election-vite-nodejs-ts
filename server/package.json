@@ -4,20 +4,24 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon bin/www",
-    "debug": "nodemon --inspect bin/www"
+
+    "start": "nodemon bin/www.ts",
+    "debug": "nodemon --inspect bin/www.ts"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongodb": "^4.12.1"
+    "mongodb": "^4.12.1",
+    "redis": "^4.5.1"
   },
   "devDependencies": {
+    "@types/compression": "^1.7.2",
     "@types/express": "^4.17.15",
-    "@types/node": "^18.11.15",
+    "@types/node": "^18.11.16",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
