@@ -1,7 +1,5 @@
 import DB from "../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "../interfaces/json/interfaceTopoJson"
-import * as ICir from "../interfaces/json/interfaceCirconscription"
 
 const collectionName = "TopoJsonSimpleMaps"
 
@@ -26,7 +24,7 @@ const PartyColors: IPartyColors = {
 async function addWinnersColor(topoJson: ITopoJson) {
     // Read topoJson file
     let generalResults = await fs.readFile('../data/Circonscription_Data.json')
-    let data: ICir.ICirconscription[] = JSON.parse(generalResults.toString()) as ICir.ICirconscription[]
+    let data: ICirconscription[] = JSON.parse(generalResults.toString()) as ICirconscription[]
     data.forEach((circo) => {
         circo.candidats.sort((candidat, candidat2) => {
             return candidat.tauxVote > candidat2.tauxVote ? 1 : 0
