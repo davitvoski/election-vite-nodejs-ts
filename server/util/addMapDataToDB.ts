@@ -1,7 +1,7 @@
 import DB from "../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "./interfaceTopoJson"
-import * as ICir from "./interfaceCirconscription"
+import { ITopoJson } from "../interfaces/json/interfaceTopoJson"
+import * as ICir from "../interfaces/json/interfaceCirconscription"
 
 const collectionName = "TopoJsonSimpleMaps"
 
@@ -53,16 +53,22 @@ async function addWinnersColor(topoJson: ITopoJson) {
  * @file [./data/topoJsonSimpleMaps.json]
  */
 async function savetopojsonToDB() {
-    // Read topoJson file
-    let rawData = await fs.readFile('../data/topoJsonSimpleMaps.json')
-    let topoJson: ITopoJson = JSON.parse(rawData.toString());
-    console.log("GOT JSON")
-    await addWinnersColor(topoJson)
-    const db = new DB()
-    //Check Collection
-    await db.dropAndCreateCollection(collectionName)
-    await db.insertManyCollection(collectionName, [topoJson])
-    console.log("Done.");
+    try {
+        // Read topoJson file
+        let rawData = await fs.readFile('../data/topoJsonSimpleMaps.json')
+        let topoJson: ITopoJson = JSON.parse(rawData.toString());
+        console.log("GOT JSON")
+        await addWinnersColor(topoJson)
+        const db = new DB()
+        //Check Collection
+        await db.dropAndCreateCollection(collectionName)
+        await db.insertManyToCollection(collectionName, [topoJson])
+        console.log("Done.");
+    }catch(err){
+        console.log(err)
+        process.exit(1)
+    }
+
 }
 
 (async () => {
