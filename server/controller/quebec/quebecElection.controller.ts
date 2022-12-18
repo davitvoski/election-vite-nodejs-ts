@@ -3,7 +3,7 @@ import { Candidat, ICirconscription } from "../../interfaces/json/interfaceCirco
 import * as dbController from "./database.controller"
 import { redisClient } from "../../app"
 import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
-import { off } from "process"
+import { IParty } from "../../interfaces/json/interfaceParty"
 
 /**
  * This method gets the TopoJson data from MongoDB to visualize the map
@@ -64,6 +64,11 @@ async function getCirconscriptionVoteDetails(req: express.Request, res: express.
     }
 }
 
+/**
+ * This endpoint sends all the circonscription data to the client
+ * @param {express.Request}  _  Express Request
+ * @param {express.Response} res Express Response
+ */
 async function getAllCirconscription(_: express.Request, res: express.Response) {
     try {
         let allCirconscription: string | null | ICirconscription[] = await redisClient.get("Quebec_All_Circonscription")
@@ -83,4 +88,30 @@ async function getAllCirconscription(_: express.Request, res: express.Response) 
         res.sendStatus(404)
     }
 }
-export { getCirconscriptionVoteDetails, getTopoJsonData, getAllCirconscription }
+
+/**
+ * This endpoint sends all parties votes data to the client
+ * @param {express.Request}  _  Express Request
+ * @param {express.Response} res Express Response
+ */
+async function getAllPartyVotes(_: express.Request, res: express.Response) {
+    try {
+        let allPartyVotes: string | null | IParty[] = await redisClient.get("Quebec_All_Party_Votes")
+        if (allPartyVotes == null) {
+            allPartyVotes = await dbController.getAllPartyVotesFromMongo()
+            // Cache the all circonscription
+            redisClient.set("Quebec_All_Party_Votes", JSON.stringify(allPartyVotes), {
+                EX: 60 * 60 * 24,
+                NX: true
+            })
+        } else {
+            allPartyVotes = JSON.parse(allPartyVotes)
+        }
+        res.status(200).json(allPartyVotes)
+    } catch (err) {
+        console.error(err)
+        res.sendStatus(404)
+    }
+}
+
+export { getCirconscriptionVoteDetails, getTopoJsonData, getAllCirconscription, getAllPartyVotes }
