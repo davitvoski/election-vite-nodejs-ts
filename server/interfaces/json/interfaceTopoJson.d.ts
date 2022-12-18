@@ -2,32 +2,32 @@
 export interface ITopoJson {
     type: string;
     arcs: Array<Array<number[]>>;
-    transform: Transform;
-    objects: Objects;
+    transform: iTransform;
+    objects: IObjects;
 }
 
-export  interface Objects {
+export interface IObjects {
     circonscriptions: Circonscriptions;
 }
 
-export  interface Circonscriptions {
+export interface ICirconscriptions {
     type: string;
-    geometries: Geometry[];
+    geometries: IGeometry[];
 }
 
-export  interface Geometry {
+export interface IGeometry {
     arcs: Array<Array<number[] | number>>;
     type: keyof typeof Type;
     properties: { [key: string]: any }
 }
 
 
-export  const Type =  {
+export const Type = {
     MultiPolygon: "MultiPolygon",
     Polygon: "Polygon",
 } as const
 
-export  interface Transform {
+export interface ITransform {
     scale: number[];
     translate: number[];
 }

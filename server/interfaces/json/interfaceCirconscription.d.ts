@@ -12,10 +12,10 @@ export interface ICirconscription {
     tauxVoteValide: number;
     tauxVoteRejete: number;
     tauxParticipation: string;
-    candidats: Candidat[];
+    candidats: ICandidat[];
 }
 
-export interface Candidat {
+export interface ICandidat {
     numeroCandidat: number;
     nom: string;
     prenom: string;
