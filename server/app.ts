@@ -23,7 +23,7 @@ const app = express.default()
 
 app.use(compression())
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// app.use(express.urlencoded({ extended: true }))dssssdsswswsss
 app.use(express.static("../client/build"))
 
 // Quebec Election routes

@@ -1,5 +1,5 @@
 import * as express from "express"
-import { Candidat, ICirconscription } from "../../interfaces/json/interfaceCirconscription"
+import { ICandidat, ICirconscription } from "../../interfaces/json/interfaceCirconscription"
 import * as dbController from "./database.controller"
 import { redisClient } from "../../app"
 import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
@@ -53,7 +53,7 @@ async function getCirconscriptionVoteDetails(req: express.Request, res: express.
             circonscription = JSON.parse(circonscription) as ICirconscription
         }
         // Sort the candidats by their vote percentage - winner is at index 0
-        circonscription.candidats.sort((candidat: Candidat, candidat2: Candidat) => {
+        circonscription.candidats.sort((candidat: ICandidat, candidat2: ICandidat) => {
             return candidat.tauxVote > candidat2.tauxVote ? 1 : 0
         })
 
