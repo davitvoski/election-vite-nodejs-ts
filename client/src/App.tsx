@@ -1,32 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import MapChart from './component/quebec/map/MapChart'
+import { Tooltip } from "react-tooltip"
+import { IGeometry } from './Types'
+
+// import reactLogo from './assets/react.svg'
+// import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [content , setContent] = useState<string>()
+  const [dataTable, setDataTable] = useState<IGeometry>()
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <section className="mt-5 container flex flex-row w-full flex-grow">
+        <div id="dda" className="m-6 xl:w-1/2 ck flex-block items-center justify-center">
+          <div className='border-2 border-black text-center' style={{ backgroundColor: "#f5f4f6" }}>
+            <h1 className="ml-5 inline-block text-black text-3xl"> Quebecs' Electoral Division Wins </h1>
+            {/* <MapChart setContentToolTip={setContent} setTable={setDataTable} /> */}
+            <MapChart setContentToolTip={setContent} setTable={setDataTable} />
+            <Tooltip>{content}</Tooltip>
+          </div>
+        </div>
+        {/* <div className="xl:w-10/12 flex flex-grow">
+          {dataTable ? <MapTable geo={dataTable} /> :
+            <h1 className="w-full self-center text-center text-3xl">Click District To Load Table</h1>}
+        </div> */}
+      </section>
+
     </div>
   )
 }
