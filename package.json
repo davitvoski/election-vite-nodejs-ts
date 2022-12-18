@@ -1,0 +1,28 @@
+{
+  "name": "quebec-election-vite-ts",
+  "version": "1.0.0",
+  "description": "Visualization of elections with nodeJS, typescript, express, redis, vite,",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && node bin/www",
+    "test": "jest",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davitvoski/quebec-election-vite-ts.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "redis",
+    "vite"
+  ],
+  "author": "Davit Voskerchyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davitvoski/quebec-election-vite-ts/issues"
+  },
+  "homepage": "https://github.com/davitvoski/quebec-election-vite-ts#readme"
+}
