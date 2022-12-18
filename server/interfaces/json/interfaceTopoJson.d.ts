@@ -2,12 +2,12 @@
 export interface ITopoJson {
     type: string;
     arcs: Array<Array<number[]>>;
-    transform: iTransform;
+    transform: ITransform;
     objects: IObjects;
 }
 
 export interface IObjects {
-    circonscriptions: Circonscriptions;
+    circonscriptions: ICirconscriptions;
 }
 
 export interface ICirconscriptions {
