@@ -1,10 +1,12 @@
 import DB from "../../db/db";
 import { ICirconscription } from "../../interfaces/json/interfaceCirconscription";
+import { IParty } from "../../interfaces/json/interfaceParty";
 import { ITopoJson } from "../../interfaces/json/interfaceTopoJson";
 const db = new DB();
 
 const collectionTopoJson = "TopoJsonSimpleMaps"
 const collectionCiro = "Circonscription"
+const collectionParty = "Party_Final_Votes"
 
 /**
  * This method gets a cironcription from database.
@@ -47,6 +49,10 @@ async function getTopoJsonDataFromMongo(): Promise<ITopoJson> {
     }
 }
 
+/**
+ * This method gets All Circonscriptions from database.
+ * @returns {Promise<ICirconscription[]>} Promise of All circonscription data
+ */
 async function getAllCirconscriptionFromMongo(): Promise<ICirconscription[]> {
     try {
         // Get Collection
@@ -58,4 +64,18 @@ async function getAllCirconscriptionFromMongo(): Promise<ICirconscription[]> {
     }
 }
 
-export { getCircoDataFromMongo, getTopoJsonDataFromMongo, getAllCirconscriptionFromMongo }
+/**
+ * This method gets All Parties from database.
+ * @returns {Promise<IParty[]>} Promise of All party data
+ */
+async function getAllPartyVotesFromMongo(): Promise<IParty[]> {
+    try {
+        // Get Collection
+        const collection = await db.getCollection(collectionParty)
+        const allCirconscription = await collection.find({}, { projection: { _id: 0 } }).toArray() as unknown as IParty[]
+        return allCirconscription
+    } catch (err) {
+        throw new Error(err as string)
+    }
+}
+export { getCircoDataFromMongo, getTopoJsonDataFromMongo, getAllCirconscriptionFromMongo, getAllPartyVotesFromMongo }
