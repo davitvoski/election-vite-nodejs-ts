@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import MapChart from './component/quebec/map/MapChart'
-import { Tooltip } from "react-tooltip"
+import { Tooltip, TooltipWrapper } from "react-tooltip"
 import { IGeometry } from './Types'
+import MapTable from './component/quebec/map/MapTable'
 
-// import reactLogo from './assets/react.svg'
-// import './App.css'
+
 
 function App() {
   const [content , setContent] = useState<string>()
@@ -18,13 +18,13 @@ function App() {
             <h1 className="ml-5 inline-block text-black text-3xl"> Quebecs' Electoral Division Wins </h1>
             {/* <MapChart setContentToolTip={setContent} setTable={setDataTable} /> */}
             <MapChart setContentToolTip={setContent} setTable={setDataTable} />
-            <Tooltip>{content}</Tooltip>
+            <TooltipWrapper>{content}</TooltipWrapper>
           </div>
         </div>
-        {/* <div className="xl:w-10/12 flex flex-grow">
+        <div className="xl:w-10/12 flex flex-grow">
           {dataTable ? <MapTable geo={dataTable} /> :
             <h1 className="w-full self-center text-center text-3xl">Click District To Load Table</h1>}
-        </div> */}
+        </div>
       </section>
 
     </div>
