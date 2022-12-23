@@ -21,6 +21,7 @@ export default function AllPartiesCards() {
 
         fetchParties().catch((err) => console.log(err))
     }, [])
+
     return (
         <section className='flex gap-10 justify-center m-6'>
             {politicalParties && politicalParties.map((party, index) => (
