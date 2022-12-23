@@ -11,7 +11,7 @@ type PartyColorsType = {
     [key: string]: string
 }
 
-const PartyColors: PartyColorsType = {
+export const PartyColors: PartyColorsType = {
     "P.Q.": "#0419a1",
     "C.A.Q.-E.F.L.": "#149ecb",
     "P.L.Q./Q.L.P.": "#e00719",

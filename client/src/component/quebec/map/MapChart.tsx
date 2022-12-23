@@ -13,7 +13,6 @@ function MapChart(props: MapChartProps) {
     useEffect(() => {
         const fetchData = async () => {
             let data = await fetch(serverURL)
-            console.log("DATA IS ", data)
             let json = await data.json()
             setGeoJson(json)
         }
@@ -22,7 +21,7 @@ function MapChart(props: MapChartProps) {
 
     return (
         <>
-            <div data-tip="">
+            <div id="regionName-tip" data-tooltip-content="Region Name">
                 {geoJson ? <ComposableMap
                     style={{ width: "100%" }}
                     id="map" projection={"geoAlbers"}
