@@ -88,3 +88,13 @@ export const AbreviationPartiPolitique = {
 export const Iso8601DateMAJ = {
     The20221006T1155412440400: "2022-10-06T11:55:41,244-04:00",
 } as const
+
+export interface IParty {
+    numeroPartiPolitique:         number;
+    nomPartiPolitique:            string;
+    abreviationPartiPolitique:    string;
+    nbVoteTotal:                  number;
+    tauxVoteTotal:                number;
+    nbCirconscriptionsEnAvance:   number;
+    tauxCirconscriptionsEnAvance: number;
+}
