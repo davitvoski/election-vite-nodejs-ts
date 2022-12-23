@@ -3,8 +3,7 @@ import MapChart from './component/quebec/map/MapChart'
 import { Tooltip } from "react-tooltip"
 import { IGeometry, IParty } from './Types'
 import MapTable from './component/quebec/map/MapTable'
-import Card from './component/quebec/Card/Card'
-import PartyCard from './component/PartyCard/PartyCard'
+import PartyCard from './component/quebec/PartyCard/PartyCard'
 import { PartyColors } from './component/quebec/map/MapTable'
 
 
@@ -36,18 +35,19 @@ function App() {
 
   return (
     <div>
-      <main className='flex flex-col text-center'>
-        <h2 className={`text-4xl mt-4`}>Vote Ratio of Major Parties</h2>
+      <main className='flex flex-col text-center container'>
+        <h2 className={`text-4xl mt-4`}>Election Parties</h2>
         <section className='flex gap-10 justify-center m-6'>
           {politicalParties && politicalParties.map((party, index) => (
             <PartyCard key={party.nomPartiPolitique} party={party} />
           ))}
         </section>
 
-        <h1 className="text-6xl"></h1>
-        <section className="mt-5 container flex flex-row w-full flex-grow text-center">
-          <div id="dda" className="m-6 xl:w-1/2 ck flex-block items-center justify-center">
-            <div className='border-2 border-black text-center' style={{ backgroundColor: "#f5f4f6" }}>
+        <h2 className={`text-4xl mt-4`}>Election District Results</h2>
+        <section className="mt-5 container flex flex-row w-full flex-grow text-center justify-center items-center h-1/2">
+          <div className="m-6 xl:w-8/12 ck flex-block items-center justify-center">
+            <div className='border-2 border-black text-center'>
+              {/* <div className='border-2 border-black text-center' style={{ backgroundColor: "#f5f4f6" }}> */}
               <h1 className="ml-5 inline-block text-black text-3xl"> Quebecs' Electoral Division Wins </h1>
               <MapChart setContentToolTip={setContent} setTable={setDataTable} />
               <Tooltip anchorId="regionName-tip">{content}</Tooltip>
