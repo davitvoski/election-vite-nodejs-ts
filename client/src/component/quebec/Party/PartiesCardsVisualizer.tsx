@@ -3,10 +3,18 @@ import { IPartyVisualizer } from "../../../App";
 import { PartyColors } from "../map/MapTable";
 import PartyCard from "./PartyCard";
 
-export default function AllPartiesCards() {
-    
+
+// type MapChartProps = {
+//     setContentToolTip: (content: string) => void
+//     setTable: (geo: IGeometry) => void
+// }
+
+export default function PartiesCardsVisualizer({ politicalParties, setPoliticalParties }: {
+    politicalParties: IPartyVisualizer[],
+    setPoliticalParties: (parties: IPartyVisualizer[]) => void
+}) {
+
     const partyURL = "/election/quebec/2022/parties/votes"
-    const [politicalParties, setPoliticalParties] = useState<IPartyVisualizer[]>();
 
     useEffect(() => {
         const fetchParties = async () => {
@@ -23,10 +31,11 @@ export default function AllPartiesCards() {
     }, [])
 
     return (
-        <section className='flex gap-10 justify-center m-6'>
+        <section className='flex gap-10 justify-center m-6 text-center'>
             {politicalParties && politicalParties.map((party, index) => (
                 <PartyCard key={party.nomPartiPolitique} party={party} />
             ))}
         </section>
+
     )
 }
