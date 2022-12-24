@@ -5,7 +5,7 @@
 
 import { useState } from "react"
 import { useEffect } from "react"
-import { ICirconscription, IGeometry } from "../../../Types"
+import { ICirconscription, IGeometry } from "../../../types/Types"
 
 type PartyColorsType = {
     [key: string]: string
@@ -78,15 +78,14 @@ export default function MapTable(props: MapTableProps) {
                                             <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                                                 {candidat.abreviationPartiPolitique}
                                             </th>
-                                            <td className="border-t-0 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                            <td className="border-t-0 text-left border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
                                                 {candidat.nom + " " + candidat.prenom}
                                             </td>
-                                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                            <td className="border-t-0 px-6 text-left border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
                                                 {candidat.nbVoteTotal}
                                             </td>
                                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                 <div className="flex items-center">
-                                                    {/* <span className="mr-2">36%</span> */}
                                                     <div className="relative w-full">
                                                         <div className="overflow-hidden h-2 text-xs flex rounded bg-gray-300 w-full">
                                                             <div style={{ width: candidat.tauxVote + 10, backgroundColor: PartyColors[candidat.abreviationPartiPolitique] }}
