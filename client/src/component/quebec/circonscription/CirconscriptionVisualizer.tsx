@@ -10,7 +10,6 @@ export default function CirconscriptionVisualizer() {
     const handleCirconscriptionChange = (e: ChangeEvent) => {
         const circName = (e.target as HTMLSelectElement).value
         const circ = allCirconscription.current!.find(c => c.nomCirconscription === circName)
-        console.log(circ);
         setCirconscription(circ)
 
     }
