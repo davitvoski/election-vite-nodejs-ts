@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
-import { ICirconscription, IParty } from './Types'
-import PartiesCardsVisualizer from './component/quebec/Party/PartiesCardsVisualizer'
+import {  IParty } from './types/Types'
+import PartiesCardsVisualizer from './component/quebec/parties/PartiesCardsVisualizer'
 import MapVisualizer from './component/quebec/map/MapVisualizer'
-import ValidBallots from './component/quebec/DonutCharts/ValidBallots'
-import ValidBallotsPercentage from './component/quebec/DonutCharts/ValidBallotsPercentage'
-import ElectedCandidates from './component/quebec/DonutCharts/ElectedCandidates'
+import ValidBallots from './component/quebec/piecharts/ValidBallots'
+import ValidBallotsPercentage from './component/quebec/piecharts/ValidBallotsPercentage'
+import ElectedCandidates from './component/quebec/piecharts/ElectedCandidates'
+import CirconscriptionVisualizer from './component/quebec/circonscription/CirconscriptionVisualizer'
+import { useState } from 'react'
 
 
 export type IPartyVisualizer = IParty & {
@@ -12,22 +13,8 @@ export type IPartyVisualizer = IParty & {
   color: string
 }
 
-const cironscriptionPath = "/2022/allCirconscription"
 function App() {
   const [politicalParties, setPoliticalParties] = useState<IPartyVisualizer[]>();
-  let allCironscription = useRef<ICirconscription[]>()
-  const [circonscription, setCirconscription] = useState<ICirconscription>();
-
-  useEffect(() => {
-    const fetchCirconscription = async () => {
-      const response = await fetch(cironscriptionPath)
-      const data = (await response.json()) as ICirconscription[]
-      allCironscription.current = data
-      setCirconscription(data[0])
-    }
-
-    fetchCirconscription().catch((err) => console.log(err))
-  }, [])
 
   return (
     <div>
@@ -49,10 +36,12 @@ function App() {
           }
 
         </section>
+
         <h2 className={`text-4xl mt-4 text-center`}>Election District Results</h2>
-        <MapVisualizer />
-
-
+        <section className='flex flex-col items-center'>
+          <MapVisualizer />
+          <CirconscriptionVisualizer />
+        </section>
 
       </main>
 
