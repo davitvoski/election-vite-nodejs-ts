@@ -11,8 +11,6 @@ const redisClient = redis.createClient({
 (async () => {
     try {
         await redisClient.connect()
-        // TODO: Remove this line in production
-        redisClient.flushAll()
     } catch (err) {
         console.log(`Redis-Error: ${err}`)
         process.exit(1)
@@ -23,7 +21,6 @@ const app = express.default()
 
 app.use(compression())
 app.use(express.json())
-// app.use(express.urlencoded({ extended: true }))dssssdsswswsss
 app.use(express.static("../client/build"))
 
 // Quebec Election routes

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Visualization of elections with nodeJS, typescript, express, redis, vite,",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "cd server && node bin/www",
+    "start": "cd server && node build/bin/www.js",
     "test": "jest",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install"
+    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build"
   },
   "repository": {
     "type": "git",
