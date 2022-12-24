@@ -1,4 +1,4 @@
-#Quebec 2022 Elections - Visualizer
+# Quebec 2022 Elections - Visualizer
 ### Davit Voskerchyan
 ### [davitvoskerchyan@outlook.com](mailto:davitvokserchyan@outlook.com)
 
