@@ -12,11 +12,13 @@ function MapChart(props: MapChartProps) {
 
     useEffect(() => {
         const fetchData = async () => {
-            let data = await fetch(serverURL)
-            let json = await data.json()
+            let response = await fetch(serverURL)
+            if (!response.ok) throw new Error("Failed to fetch data")
+
+            let json = await response.json()
             setGeoJson(json)
         }
-        fetchData()
+        fetchData().catch((err) => alert("We are having trouble connecting to the server. Please try again later."))
     }, [])
 
     return (
