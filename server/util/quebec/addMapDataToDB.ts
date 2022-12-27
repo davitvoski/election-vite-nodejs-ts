@@ -1,9 +1,12 @@
-import DB from "../db/db"
+import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "../interfaces/json/interfaceTopoJson"
-import { ICirconscription } from "../interfaces/json/interfaceCirconscription"
+import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
+import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
 
-const collectionName = "TopoJsonSimpleMaps"
+const collectionName = "QuebecMap-2022"
+
+const circonscriptionPathJSON = "./../data/quebec/2022/Circonscription_Data_2022.json"
+const mapPathJSON = "./../data/quebec/topoJsonQuebecMap.json"
 
 interface IPartyColors {
     [key: string]: string
@@ -25,13 +28,14 @@ const PartyColors: IPartyColors = {
  */
 async function addWinnersColor(topoJson: ITopoJson) {
     // Read topoJson file
-    let generalResults = await fs.readFile('../data/Circonscription_Data.json')
+    let generalResults = await fs.readFile(circonscriptionPathJSON)
     let data: ICirconscription[] = JSON.parse(generalResults.toString()) as ICirconscription[]
     data.forEach((circo) => {
         circo.candidats.sort((candidat, candidat2) => {
             return candidat.tauxVote > candidat2.tauxVote ? 1 : 0
         })
     })
+
     console.log("Adding colors.")
     topoJson.objects.circonscriptions.geometries.forEach(geo => {
         const circo = data.find(circo => {
@@ -55,7 +59,7 @@ async function addWinnersColor(topoJson: ITopoJson) {
 async function savetopojsonToDB() {
     try {
         // Read topoJson file
-        let rawData = await fs.readFile('../data/topoJsonSimpleMaps.json')
+        let rawData = await fs.readFile(mapPathJSON)
         let topoJson: ITopoJson = JSON.parse(rawData.toString());
         console.log("GOT JSON")
         await addWinnersColor(topoJson)
@@ -64,7 +68,7 @@ async function savetopojsonToDB() {
         await db.dropAndCreateCollection(collectionName)
         await db.insertManyToCollection(collectionName, [topoJson])
         console.log("Done.");
-    }catch(err){
+    } catch (err) {
         console.log(err)
         process.exit(1)
     }
