@@ -3,7 +3,7 @@ import { PartyColors } from "../../../types/QuebecPartyTypes";
 import { ICirconscription } from "../../../types/Types";
 
 export default function CirconscriptionVisualizer({ year }: { year: string }) {
-    const cironscriptionPath = "/election/quebec/2022/allCirconscription"
+    const cironscriptionPath = `/election/quebec/${year}/allCirconscription`
     const allCirconscription = useRef<ICirconscription[]>()
     const [circonscription, setCirconscription] = useState<ICirconscription>();
 
