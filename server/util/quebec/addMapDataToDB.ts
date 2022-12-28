@@ -1,9 +1,12 @@
-import DB from "../db/db"
+import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "../interfaces/json/interfaceTopoJson"
-import { ICirconscription } from "../interfaces/json/interfaceCirconscription"
+import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
+import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
 
-const collectionName = "TopoJsonSimpleMaps"
+const collectionName = "QuebecMap-2018"
+
+const circonscriptionPathJSON = "./../data/quebec/2018/Circonscription_Data_2018.json"
+const mapPathJSON = "./../data/quebec/topoJsonQuebecMap.json"
 
 interface IPartyColors {
     [key: string]: string
@@ -12,12 +15,13 @@ interface IPartyColors {
 const PartyColors: IPartyColors = {
     "P.Q.": "#0419a1",
     "C.A.Q.-E.F.L.": "#149ecb",
+    "C.A.Q.-É.F.L.": "#149ecb",
     "P.L.Q./Q.L.P.": "#e00719",
     "P.C.Q-E.E.D.": "#8a08d5",
     "Q.S.": "#e08407",
     "C.Q.": "#000000",
     "P.Li.Q.": "#000000",
-}
+} as const
 
 /**
  * This function adds the color of the winner in the region to the topoJson circoncription data
@@ -25,13 +29,14 @@ const PartyColors: IPartyColors = {
  */
 async function addWinnersColor(topoJson: ITopoJson) {
     // Read topoJson file
-    let generalResults = await fs.readFile('../data/Circonscription_Data.json')
+    let generalResults = await fs.readFile(circonscriptionPathJSON)
     let data: ICirconscription[] = JSON.parse(generalResults.toString()) as ICirconscription[]
     data.forEach((circo) => {
         circo.candidats.sort((candidat, candidat2) => {
             return candidat.tauxVote > candidat2.tauxVote ? 1 : 0
         })
     })
+
     console.log("Adding colors.")
     topoJson.objects.circonscriptions.geometries.forEach(geo => {
         const circo = data.find(circo => {
@@ -55,7 +60,7 @@ async function addWinnersColor(topoJson: ITopoJson) {
 async function savetopojsonToDB() {
     try {
         // Read topoJson file
-        let rawData = await fs.readFile('../data/topoJsonSimpleMaps.json')
+        let rawData = await fs.readFile(mapPathJSON)
         let topoJson: ITopoJson = JSON.parse(rawData.toString());
         console.log("GOT JSON")
         await addWinnersColor(topoJson)
@@ -64,7 +69,7 @@ async function savetopojsonToDB() {
         await db.dropAndCreateCollection(collectionName)
         await db.insertManyToCollection(collectionName, [topoJson])
         console.log("Done.");
-    }catch(err){
+    } catch (err) {
         console.log(err)
         process.exit(1)
     }

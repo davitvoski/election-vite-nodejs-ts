@@ -1,0 +1,192 @@
+[
+	{
+		"numeroPartiPolitique": 27,
+		"nomPartiPolitique": "Coalition avenir Québec - L'équipe François Legault",
+		"abreviationPartiPolitique": "C.A.Q.-É.F.L.",
+		"nbVoteTotal": 1509455,
+		"tauxVoteTotal": 37.4226,
+		"nbCirconscriptionsEnAvance": 74,
+		"tauxCirconscriptionsEnAvance": 59.2,
+		"nbCandidat": 125
+	},
+	{
+		"numeroPartiPolitique": 6,
+		"nomPartiPolitique": "Parti libéral du Québec/Quebec Liberal Party",
+		"abreviationPartiPolitique": "P.L.Q./Q.L.P.",
+		"nbVoteTotal": 1001037,
+		"tauxVoteTotal": 24.8178,
+		"nbCirconscriptionsEnAvance": 31,
+		"tauxCirconscriptionsEnAvance": 24.8,
+		"nbCandidat": 125
+	},
+	{
+		"numeroPartiPolitique": 8,
+		"nomPartiPolitique": "Parti québécois",
+		"abreviationPartiPolitique": "P.Q.",
+		"nbVoteTotal": 687995,
+		"tauxVoteTotal": 17.0569,
+		"nbCirconscriptionsEnAvance": 10,
+		"tauxCirconscriptionsEnAvance": 8,
+		"nbCandidat": 125
+	},
+	{
+		"numeroPartiPolitique": 40,
+		"nomPartiPolitique": "Québec solidaire",
+		"abreviationPartiPolitique": "Q.S.",
+		"nbVoteTotal": 649503,
+		"tauxVoteTotal": 16.1026,
+		"nbCirconscriptionsEnAvance": 10,
+		"tauxCirconscriptionsEnAvance": 8,
+		"nbCandidat": 125
+	},
+	{
+		"numeroPartiPolitique": 10,
+		"nomPartiPolitique": "Parti vert du Québec/Green Party of Québec",
+		"abreviationPartiPolitique": "P.V.Q./G.P.Q.",
+		"nbVoteTotal": 67870,
+		"tauxVoteTotal": 1.6826,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 97
+	},
+	{
+		"numeroPartiPolitique": 22,
+		"nomPartiPolitique": "Parti conservateur du Québec / Conservative Party of Québec",
+		"abreviationPartiPolitique": "P.C.Q./C.P.Q.",
+		"nbVoteTotal": 59055,
+		"tauxVoteTotal": 1.4641,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 101
+	},
+	{
+		"numeroPartiPolitique": 34,
+		"nomPartiPolitique": "Nouveau Parti démocratique du Québec",
+		"abreviationPartiPolitique": "N.P.D.Q.",
+		"nbVoteTotal": 22863,
+		"tauxVoteTotal": 0.5668,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 59
+	},
+	{
+		"numeroPartiPolitique": 31,
+		"nomPartiPolitique": "Citoyens au pouvoir du Québec",
+		"abreviationPartiPolitique": "C.P.Q.",
+		"nbVoteTotal": 13768,
+		"tauxVoteTotal": 0.3413,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 56
+	},
+	{
+		"numeroPartiPolitique": 0,
+		"nomPartiPolitique": "Candidats indépendants/Independent candidates",
+		"abreviationPartiPolitique": "Ind.",
+		"nbVoteTotal": 6462,
+		"tauxVoteTotal": 0.1602,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 21
+	},
+	{
+		"numeroPartiPolitique": 2,
+		"nomPartiPolitique": "Bloc pot",
+		"abreviationPartiPolitique": "B.P.",
+		"nbVoteTotal": 4657,
+		"tauxVoteTotal": 0.1155,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 29
+	},
+	{
+		"numeroPartiPolitique": 23,
+		"nomPartiPolitique": "Parti nul",
+		"abreviationPartiPolitique": "P.N.",
+		"nbVoteTotal": 3659,
+		"tauxVoteTotal": 0.0907,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 16
+	},
+	{
+		"numeroPartiPolitique": 7,
+		"nomPartiPolitique": "Parti marxiste-léniniste du Québec",
+		"abreviationPartiPolitique": "P.M.L.Q.",
+		"nbVoteTotal": 1708,
+		"tauxVoteTotal": 0.0423,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 25
+	},
+	{
+		"numeroPartiPolitique": 38,
+		"nomPartiPolitique": "Parti libre",
+		"abreviationPartiPolitique": "P.L.",
+		"nbVoteTotal": 1678,
+		"tauxVoteTotal": 0.0416,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 8
+	},
+	{
+		"numeroPartiPolitique": 29,
+		"nomPartiPolitique": "Équipe autonomiste",
+		"abreviationPartiPolitique": "É.A.",
+		"nbVoteTotal": 1138,
+		"tauxVoteTotal": 0.0282,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 12
+	},
+	{
+		"numeroPartiPolitique": 37,
+		"nomPartiPolitique": "Parti 51",
+		"abreviationPartiPolitique": "P51",
+		"nbVoteTotal": 1117,
+		"tauxVoteTotal": 0.0277,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 5
+	},
+	{
+		"numeroPartiPolitique": 36,
+		"nomPartiPolitique": "Changement intégrité pour notre Québec",
+		"abreviationPartiPolitique": "C.I.N.Q.",
+		"nbVoteTotal": 693,
+		"tauxVoteTotal": 0.0172,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 7
+	},
+	{
+		"numeroPartiPolitique": 41,
+		"nomPartiPolitique": "Alliance provinciale du Québec",
+		"abreviationPartiPolitique": "A.P.Q.",
+		"nbVoteTotal": 521,
+		"tauxVoteTotal": 0.0129,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 2
+	},
+	{
+		"numeroPartiPolitique": 45,
+		"nomPartiPolitique": "Voie du peuple",
+		"abreviationPartiPolitique": "V.P.",
+		"nbVoteTotal": 190,
+		"tauxVoteTotal": 0.0047,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 1
+	},
+	{
+		"numeroPartiPolitique": 42,
+		"nomPartiPolitique": "Parti culinaire du Québec",
+		"abreviationPartiPolitique": "P.Cu.Q.",
+		"nbVoteTotal": 169,
+		"tauxVoteTotal": 0.0042,
+		"nbCirconscriptionsEnAvance": 0,
+		"tauxCirconscriptionsEnAvance": 0,
+		"nbCandidat": 1
+	}
+]

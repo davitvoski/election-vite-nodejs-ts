@@ -2,26 +2,23 @@ import DB from "../../db/db";
 import { ICirconscription } from "../../interfaces/json/interfaceCirconscription";
 import { IParty } from "../../interfaces/json/interfaceParty";
 import { ITopoJson } from "../../interfaces/json/interfaceTopoJson";
-const db = new DB();
 
-const collectionTopoJson = "TopoJsonSimpleMaps"
-const collectionCiro = "Circonscription"
-const collectionParty = "Party_Final_Votes"
+const db = new DB();
 
 /**
  * This method gets a cironcription from database.
  * @param numeroCIRCO - [Number] The circonscription number
  * @returns {ICirconscription} The circonscription data
  */
-async function getCircoDataFromMongo(numeroCIRCO: string): Promise<ICirconscription> {
+async function getCircoDataFromMongo(numeroCIRCO: string, collectionName: string): Promise<ICirconscription> {
     // Check if the circonscription number is a number
     if (isNaN(+numeroCIRCO)) {
         throw Error("Circonscription number provided is not a number")
     }
-    // numeroCirconscription: Number(numeroCIRCO) 
+
     try {
         // Get Collection
-        const collection = await db.getCollection(collectionCiro)
+        const collection = await db.getCollection(collectionName)
         // Get Data
         const circonscription = await collection.find({ numeroCirconscription: Number(numeroCIRCO) }, { projection: { _id: 0 } }).toArray()
         const data = circonscription[0] as unknown as ICirconscription
@@ -36,10 +33,10 @@ async function getCircoDataFromMongo(numeroCIRCO: string): Promise<ICirconscript
 * This method gets the TopoJson data from database.
 * @returns {Pormise<ITopoJson>} The TopoJson data from MongoDB
 */
-async function getTopoJsonDataFromMongo(): Promise<ITopoJson> {
+async function getTopoJsonDataFromMongo(collectionName: string): Promise<ITopoJson> {
     try {
         // Get Collection
-        const collection = await db.getCollection(collectionTopoJson)
+        const collection = await db.getCollection(collectionName)
         // Get Data
         const topojsonArray = await collection.find({}, { projection: { _id: 0 } }).toArray()
         const data = topojsonArray[0] as unknown as ITopoJson
@@ -53,10 +50,10 @@ async function getTopoJsonDataFromMongo(): Promise<ITopoJson> {
  * This method gets All Circonscriptions from database.
  * @returns {Promise<ICirconscription[]>} Promise of All circonscription data
  */
-async function getAllCirconscriptionFromMongo(): Promise<ICirconscription[]> {
+async function getAllCirconscriptionFromMongo(collectionName: string): Promise<ICirconscription[]> {
     try {
         // Get Collection
-        const collection = await db.getCollection(collectionCiro)
+        const collection = await db.getCollection(collectionName)
         const allCirconscription = await collection.find({}, { projection: { _id: 0 } }).toArray() as unknown as ICirconscription[]
         return allCirconscription
     } catch (err) {
@@ -68,10 +65,10 @@ async function getAllCirconscriptionFromMongo(): Promise<ICirconscription[]> {
  * This method gets All Parties from database.
  * @returns {Promise<IParty[]>} Promise of All party data
  */
-async function getAllPartyVotesFromMongo(): Promise<IParty[]> {
+async function getAllPartyVotesFromMongo(collectionName: string): Promise<IParty[]> {
     try {
         // Get Collection
-        const collection = await db.getCollection(collectionParty)
+        const collection = await db.getCollection(collectionName)
         const allCirconscription = await collection.find({}, { projection: { _id: 0 } }).toArray() as unknown as IParty[]
         return allCirconscription
     } catch (err) {

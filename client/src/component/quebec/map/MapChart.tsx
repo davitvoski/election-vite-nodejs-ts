@@ -5,9 +5,10 @@ import { IGeometry, ITopoJson } from "../../../types/Types"
 type MapChartProps = {
     setContentToolTip: (content: string) => void
     setTable: (geo: IGeometry) => void
+    year: string
 }
 function MapChart(props: MapChartProps) {
-    const serverURL = "/election/quebec/map";
+    const serverURL = `/election/quebec/${props.year}/map`;
     const [geoJson, setGeoJson] = useState<ITopoJson>()
 
     useEffect(() => {
@@ -18,8 +19,8 @@ function MapChart(props: MapChartProps) {
             let json = await response.json()
             setGeoJson(json)
         }
-        fetchData().catch((err) => alert("We are having trouble connecting to the server. Please try again later."))
-    }, [])
+        fetchData().catch(() => alert("We are having trouble connecting to the server. Please try again later."))
+    }, [props.year])
 
     return (
         <>

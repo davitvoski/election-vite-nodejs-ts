@@ -2,9 +2,9 @@
 export interface ICirconscription {
     numeroCirconscription: number;
     nomCirconscription: string;
-    iso8601DateMAJ: typeof Iso8601DateMAJ;
-    nbBureauComplete: number;
-    nbBureauTotal: number;
+    iso8601DateMAJ?: typeof Iso8601DateMAJ;
+    nbBureauComplete?: number;
+    nbBureauTotal?: number;
     nbVoteValide: number;
     nbVoteRejete: number;
     nbVoteExerce: number;

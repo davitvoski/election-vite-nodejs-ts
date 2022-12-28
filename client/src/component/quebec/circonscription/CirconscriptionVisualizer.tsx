@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { PartyColors } from "../../../types/QuebecPartyTypes";
 import { ICirconscription } from "../../../types/Types";
-import { PartyColors } from "../map/MapTable";
 
-export default function CirconscriptionVisualizer() {
+export default function CirconscriptionVisualizer({ year }: { year: string }) {
     const cironscriptionPath = "/election/quebec/2022/allCirconscription"
     const allCirconscription = useRef<ICirconscription[]>()
     const [circonscription, setCirconscription] = useState<ICirconscription>();
@@ -25,7 +25,7 @@ export default function CirconscriptionVisualizer() {
         }
 
         fetchCirconscription().catch(() => alert("We are having trouble connecting to the server. Please try again later."))
-    }, [])
+    }, [year])
 
     return (
         <>

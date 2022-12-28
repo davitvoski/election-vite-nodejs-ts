@@ -10,14 +10,15 @@ import { IParty } from "../../interfaces/json/interfaceParty"
  * @param {express.Request} _ Express Request
  * @param {express.Response} res Express Response
  */
-async function getTopoJsonData(_: express.Request, res: express.Response) {
+async function getMap_2018(_: express.Request, res: express.Response) {
+    const colectionName = "QuebecMap-2018"
     try {
-        let topoJson: string | null | ITopoJson = await redisClient.get("Quebec_Map")
+        let topoJson: string | null | ITopoJson = await redisClient.get("QuebecMap2018")
         if (topoJson == null) {
             // Get Data From Database
-            topoJson = await dbController.getTopoJsonDataFromMongo()
+            topoJson = await dbController.getTopoJsonDataFromMongo(colectionName)
             // Cache map
-            redisClient.set("Quebec_Map", JSON.stringify(topoJson), {
+            redisClient.set("QuebecMap2018", JSON.stringify(topoJson), {
                 EX: 60 * 60 * 24,
                 NX: true
             })
@@ -37,15 +38,17 @@ async function getTopoJsonData(_: express.Request, res: express.Response) {
  * @param {express.Request} _ Express Request
  * @param {express.Response} res Express Response
  */
-async function getCirconscriptionVoteDetails(req: express.Request, res: express.Response) {
+async function getCirconscriptionVoteDetails_2018(req: express.Request, res: express.Response) {
+    const colectionName = "Quebec_Circonscription_2018"
+
     try {
         const numeroCIRCO: string = req.params.numeroCirco
-        let circonscription: string | null | ICirconscription = await redisClient.get(`Quebec_Circo_${numeroCIRCO}`)
+        let circonscription: string | null | ICirconscription = await redisClient.get(`Quebec_Circonscription_2018_${numeroCIRCO}`)
         if (circonscription == null) {
             // Get Data From Database
-            circonscription = await dbController.getCircoDataFromMongo(numeroCIRCO)
+            circonscription = await dbController.getCircoDataFromMongo(numeroCIRCO, colectionName)
             // Cache the circonscription
-            redisClient.set(`Quebec_Circo_${numeroCIRCO}`, JSON.stringify(circonscription), {
+            redisClient.set(`Quebec_Circonscription_2018_${numeroCIRCO}`, JSON.stringify(circonscription), {
                 EX: 60 * 60 * 24,
                 NX: true
             })
@@ -69,13 +72,15 @@ async function getCirconscriptionVoteDetails(req: express.Request, res: express.
  * @param {express.Request}  _  Express Request
  * @param {express.Response} res Express Response
  */
-async function getAllCirconscription(_: express.Request, res: express.Response) {
+async function getAllCirconscription_2018(_: express.Request, res: express.Response) {
+    const colectionName = "Quebec_Circonscription_2018"
+
     try {
-        let allCirconscription: string | null | ICirconscription[] = await redisClient.get("Quebec_All_Circonscription")
+        let allCirconscription: string | null | ICirconscription[] = await redisClient.get("Quebec_All_Circonscription_2018")
         if (allCirconscription == null) {
-            allCirconscription = await dbController.getAllCirconscriptionFromMongo()
+            allCirconscription = await dbController.getAllCirconscriptionFromMongo(colectionName)
             // Cache the all circonscription
-            redisClient.set("Quebec_All_Circonscription", JSON.stringify(allCirconscription), {
+            redisClient.set("Quebec_All_Circonscription_2018", JSON.stringify(allCirconscription), {
                 EX: 60 * 60 * 24,
                 NX: true
             })
@@ -94,13 +99,15 @@ async function getAllCirconscription(_: express.Request, res: express.Response) 
  * @param {express.Request}  _  Express Request
  * @param {express.Response} res Express Response
  */
-async function getAllPartyVotes(_: express.Request, res: express.Response) {
+async function getAllPartyVotes_2018(_: express.Request, res: express.Response) {
+    const colectionName = "Quebec_Party_2018"
+
     try {
-        let allPartyVotes: string | null | IParty[] = await redisClient.get("Quebec_All_Party_Votes")
+        let allPartyVotes: string | null | IParty[] = await redisClient.get("Quebec_Parties_2018")
         if (allPartyVotes == null) {
-            allPartyVotes = await dbController.getAllPartyVotesFromMongo()
+            allPartyVotes = await dbController.getAllPartyVotesFromMongo(colectionName)
             // Cache the all circonscription
-            redisClient.set("Quebec_All_Party_Votes", JSON.stringify(allPartyVotes), {
+            redisClient.set("Quebec_Parties_2018", JSON.stringify(allPartyVotes), {
                 EX: 60 * 60 * 24,
                 NX: true
             })
@@ -114,4 +121,4 @@ async function getAllPartyVotes(_: express.Request, res: express.Response) {
     }
 }
 
-export { getCirconscriptionVoteDetails, getTopoJsonData, getAllCirconscription, getAllPartyVotes }
+export { getCirconscriptionVoteDetails_2018, getMap_2018, getAllCirconscription_2018, getAllPartyVotes_2018 }
