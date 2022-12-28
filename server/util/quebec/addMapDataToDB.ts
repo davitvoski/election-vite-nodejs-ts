@@ -3,9 +3,9 @@ import * as fs from "fs/promises"
 import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
 import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
 
-const collectionName = "QuebecMap-2022"
+const collectionName = "QuebecMap-2018"
 
-const circonscriptionPathJSON = "./../data/quebec/2022/Circonscription_Data_2022.json"
+const circonscriptionPathJSON = "./../data/quebec/2018/Circonscription_Data_2018.json"
 const mapPathJSON = "./../data/quebec/topoJsonQuebecMap.json"
 
 interface IPartyColors {
@@ -15,12 +15,13 @@ interface IPartyColors {
 const PartyColors: IPartyColors = {
     "P.Q.": "#0419a1",
     "C.A.Q.-E.F.L.": "#149ecb",
+    "C.A.Q.-É.F.L.": "#149ecb",
     "P.L.Q./Q.L.P.": "#e00719",
     "P.C.Q-E.E.D.": "#8a08d5",
     "Q.S.": "#e08407",
     "C.Q.": "#000000",
     "P.Li.Q.": "#000000",
-}
+} as const
 
 /**
  * This function adds the color of the winner in the region to the topoJson circoncription data

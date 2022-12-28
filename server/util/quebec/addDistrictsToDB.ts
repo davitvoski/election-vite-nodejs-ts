@@ -3,12 +3,12 @@ import * as fs from "fs/promises"
 import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
 import { IParty } from "../../interfaces/json/interfaceParty"
 
-const districtCollection = "Quebec_Circonscription_2022"
-const circonscriptionPathJSON = "../data/quebec/2022/Circonscription_Data_2022.json"
+const districtCollection = "Quebec_Circonscription_2018"
+const circonscriptionPathJSON = "../data/quebec/2018/Circonscription_Data_2018.json"
 
 
-const PartyCollection = "Qeubec_Party_2022"
-const partyPathJSON = "../data/quebec/2022/Party_Final_Vote_2022.json"
+const PartyCollection = "Quebec_Party_2018"
+const partyPathJSON = "../data/quebec/2018/Party_Final_Vote_2018.json"
 
 
 async function saveDistrictsToDB() {
