@@ -8,9 +8,11 @@ import quebecElectionRouter from "./routes/quebecElection.router"
 const redisClient = redis.createClient({
     url: process.env.REDIS_URL
 });
+
 (async () => {
     try {
         await redisClient.connect()
+        redisClient.flushAll()
     } catch (err) {
         console.log(`Redis-Error: ${err}`)
         process.exit(1)
@@ -25,6 +27,7 @@ app.use(express.static("../client/build"))
 
 // Quebec Election routes
 app.use("/election/quebec", quebecElectionRouter)
+
 
 // Default 404 handler
 app.use((_, res) => {
