@@ -5,7 +5,7 @@ import MapChart from "./MapChart"
 import MapTable from "./MapTable"
 
 
-export default function MapVisualizer() {
+export default function MapVisualizer({ year }: { year: string }) {
     const [content, setContent] = useState<string>("Hover over district")
     const [dataTable, setDataTable] = useState<IGeometry>()
 
@@ -14,12 +14,12 @@ export default function MapVisualizer() {
             <div className="ml-20 xl:w-8/12 ck flex-block items-center justify-center">
                 <div className='border-2 border-black text-center'>
                     <h1 className="ml-5 inline-block text-black text-3xl"> Quebecs' Electoral Division Wins </h1>
-                    <MapChart setContentToolTip={setContent} setTable={setDataTable} />
+                    <MapChart setContentToolTip={setContent} setTable={setDataTable} year={year} />
                     <Tooltip anchorId="regionName-tip">{content}</Tooltip>
                 </div>
             </div>
             <div className="xl:w-10/12 flex flex-grow">
-                {dataTable ? <MapTable geo={dataTable} /> :
+                {dataTable ? <MapTable year={year} geo={dataTable} /> :
                     <h1 className="w-full self-center text-center text-3xl">Click District To Load Table</h1>}
             </div>
         </section>
