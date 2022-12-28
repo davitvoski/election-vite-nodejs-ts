@@ -107,7 +107,6 @@ async function getAllPartyVotes_2022(_: express.Request, res: express.Response) 
 
         if (allPartyVotes == null) {
             allPartyVotes = await dbController.getAllPartyVotesFromMongo(colectionName)
-            console.log(allPartyVotes);
 
             // Cache the all circonscription
             redisClient.set("Quebec_Parties_2022", JSON.stringify(allPartyVotes), {

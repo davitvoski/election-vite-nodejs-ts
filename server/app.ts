@@ -12,7 +12,6 @@ const redisClient = redis.createClient({
 (async () => {
     try {
         await redisClient.connect()
-        redisClient.flushAll()
     } catch (err) {
         console.log(`Redis-Error: ${err}`)
         process.exit(1)
