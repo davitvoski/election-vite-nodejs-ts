@@ -1,9 +1,9 @@
 import * as express from "express"
-import { ICandidat, ICirconscription } from "../../interfaces/json/interfaceCirconscription"
+import { ICandidat, ICirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 import * as dbController from "./database.controller"
 import { redisClient } from "../../app"
-import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
-import { IParty } from "../../interfaces/json/interfaceParty"
+import { ITopoJson } from "../../interfaces/json/quebec/interfaceTopoJson"
+import { IParty } from "../../interfaces/json/quebec/interfaceParty"
 
 /**
  * This method gets the TopoJson data from MongoDB to visualize the map
