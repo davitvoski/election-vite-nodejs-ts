@@ -4,6 +4,7 @@ import * as express from "express"
 import compression from "compression"
 import * as redis from "redis"
 import quebecElectionRouter from "./routes/quebecElection.router"
+import britishColombiaElectionRouter from "./routes/british-colombiaElection.router"
 
 const redisClient = redis.createClient({
     url: process.env.REDIS_URL
@@ -24,8 +25,9 @@ app.use(compression())
 app.use(express.json())
 app.use(express.static("../client/build"))
 
-// Quebec Election routes
+// Election routes
 app.use("/election/quebec", quebecElectionRouter)
+app.use("/election/british-colombia", britishColombiaElectionRouter)
 
 
 // Default 404 handler
