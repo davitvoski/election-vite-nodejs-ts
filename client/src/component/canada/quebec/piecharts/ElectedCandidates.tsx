@@ -1,5 +1,5 @@
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
-import { IPartyVisualizer } from "../../../App";
+import { IPartyVisualizer } from "../../../../App";
 
 export default function ValidBallots({ parties }: {
     parties: IPartyVisualizer[]

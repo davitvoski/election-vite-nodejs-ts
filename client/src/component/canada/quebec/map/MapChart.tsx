@@ -1,6 +1,6 @@
 import React, { useEffect, useState, memo } from "react"
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps"
-import { IGeometry, ITopoJson } from "../../../types/Types"
+import { IGeometry, ITopoJson } from "../../../../types/Types"
 
 type MapChartProps = {
     setContentToolTip: (content: string) => void

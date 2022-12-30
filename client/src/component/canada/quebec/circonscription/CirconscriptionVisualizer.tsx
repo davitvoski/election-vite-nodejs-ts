@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { PartyColors } from "../../../types/QuebecPartyTypes";
-import { ICirconscription } from "../../../types/Types";
+import { PartyColors } from "../../../../types/QuebecPartyTypes";
+import { ICirconscription } from "../../../../types/Types";
 
 export default function CirconscriptionVisualizer({ year }: { year: string }) {
     const cironscriptionPath = `/election/quebec/${year}/allCirconscription`

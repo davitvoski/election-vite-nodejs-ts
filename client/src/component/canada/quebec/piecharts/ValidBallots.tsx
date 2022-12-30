@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, TooltipProps } from "recharts";
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-import { IPartyVisualizer } from "../../../App";
+import { IPartyVisualizer } from "../../../../App";
 
 const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
     if (active && payload && payload.length) {

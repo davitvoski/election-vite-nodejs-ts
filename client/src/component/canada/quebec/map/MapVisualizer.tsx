@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Tooltip } from "react-tooltip"
-import { IGeometry } from "../../../types/Types"
+import { IGeometry } from "../../../../types/Types"
 import MapChart from "./MapChart"
 import MapTable from "./MapTable"
 

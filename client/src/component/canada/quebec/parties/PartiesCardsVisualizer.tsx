@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { IPartyVisualizer } from "../../../App";
-import { PartyColors } from "../../../types/QuebecPartyTypes";
+import { IPartyVisualizer } from "../../../../App";
+import { PartyColors } from "../../../../types/QuebecPartyTypes";
 import PartyCard from "./PartyCard";
 
 

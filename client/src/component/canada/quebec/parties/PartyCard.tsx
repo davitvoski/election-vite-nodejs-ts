@@ -1,4 +1,4 @@
-import { IPartyVisualizer } from "../../../App";
+import { IPartyVisualizer } from "../../../../App";
 
 
 function PartyCard({ party }: { party: IPartyVisualizer }) {
