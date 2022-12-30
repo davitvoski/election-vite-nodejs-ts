@@ -1,6 +1,6 @@
 import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
+import { ICirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 import { IParty } from "../../interfaces/json/interfaceParty"
 
 const districtCollection = "Quebec_Circonscription_2018"

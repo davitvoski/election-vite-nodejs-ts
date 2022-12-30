@@ -1,7 +1,7 @@
 import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
-import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
+import { ITopoJson } from "../../interfaces/json/quebec/interfaceTopoJson"
+import { ICirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 
 const collectionName = "QuebecMap-2018"
 
