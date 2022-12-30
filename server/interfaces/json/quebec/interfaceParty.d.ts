@@ -1,4 +1,4 @@
-export interface IParty {
+export interface IQCParty {
     numeroPartiPolitique: number;
     nomPartiPolitique: string;
     abreviationPartiPolitique: string;

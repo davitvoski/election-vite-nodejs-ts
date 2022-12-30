@@ -1,9 +1,9 @@
 import * as express from "express"
-import { ICandidat, ICirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
+import { ICandidat, IQCCirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 import * as dbController from "./database.controller"
 import { redisClient } from "../../app"
-import { ITopoJson } from "../../interfaces/json/quebec/interfaceTopoJson"
-import { IParty } from "../../interfaces/json/quebec/interfaceParty"
+import { IQCTopoJson } from "../../interfaces/json/quebec/interfaceTopoJson"
+import { IQCParty } from "../../interfaces/json/quebec/interfaceParty"
 
 /**
  * This method gets the TopoJson data from MongoDB to visualize the map
@@ -13,7 +13,7 @@ import { IParty } from "../../interfaces/json/quebec/interfaceParty"
 async function getMap_2022(_: express.Request, res: express.Response) {
     const colectionName = "QuebecMap-2022"
     try {
-        let topoJson: string | null | ITopoJson = await redisClient.get("QuebecMap2022")
+        let topoJson: string | null | IQCTopoJson = await redisClient.get("QuebecMap2022")
         if (topoJson == null) {
             // Get Data From Database
             topoJson = await dbController.getTopoJsonDataFromMongo(colectionName)
@@ -43,7 +43,7 @@ async function getCirconscriptionVoteDetails_2022(req: express.Request, res: exp
 
     try {
         const numeroCIRCO: string = req.params.numeroCirco
-        let circonscription: string | null | ICirconscription = await redisClient.get(`Quebec_Circonscription_2022_${numeroCIRCO}`)
+        let circonscription: string | null | IQCCirconscription = await redisClient.get(`Quebec_Circonscription_2022_${numeroCIRCO}`)
         if (circonscription == null) {
             // Get Data From Database
             circonscription = await dbController.getCircoDataFromMongo(numeroCIRCO, colectionName)
@@ -53,7 +53,7 @@ async function getCirconscriptionVoteDetails_2022(req: express.Request, res: exp
                 NX: true
             })
         } else {
-            circonscription = JSON.parse(circonscription) as ICirconscription
+            circonscription = JSON.parse(circonscription) as IQCCirconscription
         }
         // Sort the candidats by their vote percentage - winner is at index 0
         circonscription.candidats.sort((candidat: ICandidat, candidat2: ICandidat) => {
@@ -76,7 +76,7 @@ async function getAllCirconscription_2022(_: express.Request, res: express.Respo
     const colectionName = "Quebec_Circonscription_2022"
 
     try {
-        let allCirconscription: string | null | ICirconscription[] = await redisClient.get("Quebec_All_Circonscription_2022")
+        let allCirconscription: string | null | IQCCirconscription[] = await redisClient.get("Quebec_All_Circonscription_2022")
         if (allCirconscription == null) {
             allCirconscription = await dbController.getAllCirconscriptionFromMongo(colectionName)
             // Cache the all circonscription
@@ -103,7 +103,7 @@ async function getAllPartyVotes_2022(_: express.Request, res: express.Response) 
     const colectionName = "Quebec_Party_2022"
 
     try {
-        let allPartyVotes: string | null | IParty[] = await redisClient.get("Quebec_Parties_2022")
+        let allPartyVotes: string | null | IQCParty[] = await redisClient.get("Quebec_Parties_2022")
 
         if (allPartyVotes == null) {
             allPartyVotes = await dbController.getAllPartyVotesFromMongo(colectionName)

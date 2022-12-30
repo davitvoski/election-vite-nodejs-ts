@@ -1,5 +1,5 @@
 
-export interface ICirconscription {
+export interface IQCCirconscription {
     numeroCirconscription: number;
     nomCirconscription: string;
     iso8601DateMAJ?: typeof Iso8601DateMAJ;
