@@ -1,6 +1,6 @@
 import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ICirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
+import { IQCCirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 import { IParty } from "../../interfaces/json/interfaceParty"
 
 const districtCollection = "Quebec_Circonscription_2018"
@@ -15,7 +15,7 @@ async function saveDistrictsToDB() {
     try {
         //Get json data
         const rawData = await fs.readFile(circonscriptionPathJSON)
-        const districtsJson: ICirconscription[] = JSON.parse(rawData.toString());
+        const districtsJson: IQCCirconscription[] = JSON.parse(rawData.toString());
         // Remove unwanted properties
         districtsJson.forEach(d => {
             delete d.iso8601DateMAJ
