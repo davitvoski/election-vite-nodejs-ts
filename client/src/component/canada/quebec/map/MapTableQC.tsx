@@ -6,7 +6,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { PartyColors } from "../../../../types/QuebecPartyTypes"
-import { ICirconscription, IGeometry } from "../../../../types/Types"
+import { ICirconscription, IGeometry } from "../../../../types/QuebecTypes"
 
 
 type MapTableProps = {

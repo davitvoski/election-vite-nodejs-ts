@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
 import { IPartyVisualizer } from "../../../../App";
 
-export default function ValidBallots({ parties }: {
+function ValidBallotsPercentage({ parties }: {
     parties: IPartyVisualizer[]
 }) {
 
@@ -28,3 +29,5 @@ export default function ValidBallots({ parties }: {
         </div>
     );
 }
+
+export default ValidBallotsPercentage

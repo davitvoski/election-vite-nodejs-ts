@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Tooltip } from "react-tooltip"
-import { IGeometry } from "../../../../types/Types"
-import MapChart from "./MapChart"
-import MapTable from "./MapTable"
+import { IGeometry } from "../../../../types/QuebecTypes"
+import MapChart from "./MapChartQC"
+import MapTable from "./MapTableQC"
 
 
 export default function MapVisualizer({ year }: { year: string }) {

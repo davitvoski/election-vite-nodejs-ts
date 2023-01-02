@@ -1,10 +1,10 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, memo, useEffect, useState } from "react";
 import { IPartyVisualizer } from "../../../../App";
 import { PartyColors } from "../../../../types/QuebecPartyTypes";
 import PartyCard from "./PartyCard";
 
 
-export default function PartiesCardsVisualizer({ politicalParties, setPoliticalParties, year }: {
+function PartiesCardsVisualizer({ politicalParties, setPoliticalParties, year }: {
     politicalParties: IPartyVisualizer[],
     setPoliticalParties: (parties: IPartyVisualizer[]) => void,
     year: string
@@ -16,12 +16,10 @@ export default function PartiesCardsVisualizer({ politicalParties, setPoliticalP
 
         const fetchParties = async () => {
             const API = `/election/quebec/${year}/parties/votes`
-            console.log("API url: ", API)
 
             const response = await fetch(API, {
                 signal: signal
             })
-            console.log(response)
             const data = (await response.json()) as IPartyVisualizer[]
             let filteredParties = data.filter((party) => party.tauxVoteTotal > 10)
             filteredParties.map((party, index) => {
@@ -50,6 +48,7 @@ export default function PartiesCardsVisualizer({ politicalParties, setPoliticalP
                 <PartyCard key={party.nomPartiPolitique} party={party} />
             ))}
         </section>
-
     )
 }
+
+export default memo(PartiesCardsVisualizer)

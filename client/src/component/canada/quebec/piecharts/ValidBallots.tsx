@@ -1,20 +1,11 @@
+import { memo, useMemo } from "react";
 import { PieChart, Pie, Cell, TooltipProps } from "recharts";
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 import { IPartyVisualizer } from "../../../../App";
 
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-    if (active && payload && payload.length) {
-        return (
-            <div className="custom-tooltip bg-[#A18C04]">
-                <p className="label">{`${payload[0].value}`}</p>
-            </div>
-        );
-    }
 
-    return null;
-};
 
-export default function ValidBallots({ parties }: {
+function ValidBallots({ parties }: {
     parties: IPartyVisualizer[]
 }) {
     return (
@@ -40,3 +31,5 @@ export default function ValidBallots({ parties }: {
         </div>
     );
 }
+
+export default ValidBallots
