@@ -1,9 +1,11 @@
 import dotenv from "dotenv"
-dotenv.config({ path: "./../.env"})
+dotenv.config({ path: __dirname + "./../.env"})
 import * as mongoDB from "mongodb"
 
 const dbUrl: string = process.env.ATLAS_URI as string
 const dbName: string = process.env.ATLAS_DB_NAME as string
+
+
 
 class DB {
     private static instance: DB

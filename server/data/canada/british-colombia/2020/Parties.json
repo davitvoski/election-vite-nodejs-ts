@@ -1,0 +1,34 @@
+[
+    {
+        "name": "New Democratic",
+        "abbv": "BC NDP",
+        "color": "#f4a460",
+        "elected": 57,
+        "totalVotes": 898384,
+        "totalVotesPercentage": 47.69
+    },
+    {
+        "name": "BC Liberal Party",
+        "abbv": "BC Liberals",
+        "color": "#a41b13",
+        "elected": 28,
+        "totalVotes": 636148,
+        "totalVotesPercentage": 32.18
+    },
+    {
+        "name": "BC Green Party",
+        "abbv": "BC Greens",
+        "color": "#98c954",
+        "elected": 2,
+        "totalVotes": 284151,
+        "totalVotesPercentage": 15.09
+    },
+    {
+        "name": "Conservative Party of British Columbia",
+        "abbv": "BC Conservative",
+        "color": "#0000FF",
+        "elected": 0,
+        "totalVotes": 35902,
+        "totalVotesPercentage": 1.91
+    }
+]
