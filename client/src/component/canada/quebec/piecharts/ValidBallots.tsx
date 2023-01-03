@@ -1,7 +1,7 @@
 import { memo, useMemo } from "react";
 import { PieChart, Pie, Cell, TooltipProps } from "recharts";
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-import { IPartyVisualizer } from "../../../../App";
+import { IPartyVisualizer } from "../QC";
 
 
 

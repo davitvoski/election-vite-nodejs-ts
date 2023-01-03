@@ -14,7 +14,6 @@ export type IPartyVisualizer = IParty & {
     color: string
 }
 
-
 function QC() {
     const [politicalParties, setPoliticalParties] = useState<IPartyVisualizer[]>();
     let { year } = useParams()

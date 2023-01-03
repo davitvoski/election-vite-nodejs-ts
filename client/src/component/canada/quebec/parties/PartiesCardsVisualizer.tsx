@@ -1,6 +1,6 @@
 import { ChangeEvent, memo, useEffect, useState } from "react";
-import { IPartyVisualizer } from "../../../../App";
 import { PartyColors } from "../../../../types/QuebecPartyTypes";
+import { IPartyVisualizer } from "../QC";
 import PartyCard from "./PartyCard";
 
 
@@ -51,4 +51,4 @@ function PartiesCardsVisualizer({ politicalParties, setPoliticalParties, year }:
     )
 }
 
-export default memo(PartiesCardsVisualizer)
+export default PartiesCardsVisualizer

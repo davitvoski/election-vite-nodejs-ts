@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
-import { IPartyVisualizer } from "../../../../App";
+import { IPartyVisualizer } from "../QC";
 
 function ValidBallots({ parties }: {
     parties: IPartyVisualizer[]
