@@ -1,7 +1,7 @@
 import DB from "../../db/db"
 import * as fs from "fs/promises"
 import { IQCCirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
-import { IParty } from "../../interfaces/json/interfaceParty"
+import { IQCParty } from "../../interfaces/json/quebec/interfaceParty"
 
 const districtCollection = "Quebec_Circonscription_2018"
 const circonscriptionPathJSON = "../data/quebec/2018/Circonscription_Data_2018.json"
@@ -37,7 +37,7 @@ async function savePartiesToDB() {
     try {
         //Get json data
         let rawData = await fs.readFile(partyPathJSON)
-        let partiesJson: IParty[] = JSON.parse(rawData.toString());
+        let partiesJson: IQCParty[] = JSON.parse(rawData.toString());
         // Remove unwanted properties
         partiesJson.forEach(p => {
             delete p.nbCandidat
