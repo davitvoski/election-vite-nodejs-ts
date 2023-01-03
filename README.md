@@ -18,6 +18,11 @@ I than deployed it to railway.app. <br>
 
 ## Website
 https://elections.up.railway.app/
+https://elections-md6y.onrender.com/
+
+## To Create a Map
+1. Import Electoral Districts shapefile to https://mapshaper.org/
+2. Use $ proj wgs84 commmand to convert the shapefile to WGS84
 
 # Set Up - Local
 
@@ -34,14 +39,14 @@ https://elections.up.railway.app/
 
     - The error should contain something like "startswith...".
 
-
 5. Run the following commands:
 
-- npm run build
-- node ./server/util/generalResultIntertion.js
-- node ./server/util/insertDataScript.js
-- node ./server/util/saveTopoJsonToMongo.cjs
-- npm run start
+    1. npm run build
+    2. cd ./server/util/quebec
+    3. ts-node addDistrictsToDB.ts
+    4. ts-node addMapDataToDB.ts
+    5. Repeat step 2-4 for each state and its election years by changing the paths;
+6. npm run start
 
 6. Open http://localhost:3001 to view it in the browser.
 
