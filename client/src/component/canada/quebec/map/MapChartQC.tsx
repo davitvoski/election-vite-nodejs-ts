@@ -17,7 +17,6 @@ function MapChart(props: MapChartProps) {
             if (!response.ok) throw new Error("Failed to fetch data")
 
             let json = await response.json()
-            console.log(json)
             setGeoJson(json)
         }
         fetchData().catch(() => alert("We are having trouble connecting to the server. Please try again later."))

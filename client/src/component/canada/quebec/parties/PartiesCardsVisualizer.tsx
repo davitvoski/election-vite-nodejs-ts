@@ -25,7 +25,6 @@ function PartiesCardsVisualizer({ politicalParties, setPoliticalParties, year }:
             filteredParties.map((party, index) => {
                 party.color = PartyColors[party.abreviationPartiPolitique]
             })
-            console.log(filteredParties);
 
             setPoliticalParties(filteredParties)
         }
