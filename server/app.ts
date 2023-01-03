@@ -27,7 +27,7 @@ app.use(express.static("../client/build"))
 
 // Election routes
 app.use("/election/quebec", quebecElectionRouter)
-app.use("/election/british-colombia", britishColombiaElectionRouter)
+app.use("/election/british-columbia", britishColombiaElectionRouter)
 
 
 // Default 404 handler
