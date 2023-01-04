@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IParty } from "../../../types/QuebecTypes";
 import CirconscriptionVisualizer from "./circonscription/CirconscriptionVisualizer";
@@ -16,13 +16,14 @@ export type IPartyVisualizer = IParty & {
 
 function QC() {
     const [politicalParties, setPoliticalParties] = useState<IPartyVisualizer[]>();
+    
     let { year } = useParams()
     if (!year) year = "2022"
 
     return (
         <>
             <main className='flex flex-col container'>
-                <h2 className={`text-4xl text-center mt-4`}>Election Parties</h2>
+                <h2 className={`text-4xl text-center mt-4`}>QUEBEC {year} Election Parties</h2>
                 <PartiesCardsVisualizer politicalParties={politicalParties!}
                     setPoliticalParties={setPoliticalParties} year={year!} />
 

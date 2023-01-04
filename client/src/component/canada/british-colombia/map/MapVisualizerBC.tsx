@@ -12,7 +12,7 @@ export default function MapVisualizerBC({ year }: { year: string }) {
         <section className="mt-5 container flex flex-row w-full flex-grow text-center justify-center items-center">
             <div className="ml-20 mb-4 w-7/12 flex-block items-center justify-center">
                 <div className='border-2 border-black text-center'>
-                    <h1 className="ml-5 inline-block text-black text-3xl"> Quebecs' Electoral Division Wins </h1>
+                    <h1 className="ml-5 inline-block text-black text-3xl"> British-Columbias' Electoral Division Wins </h1>
                     <MapChartBC setContentToolTip={setContent} setTable={setDataTable} year={year} />
                     <Tooltip anchorId="regionName-tip">{content}</Tooltip>
                 </div>
