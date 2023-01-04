@@ -1,7 +1,7 @@
 import DB from "../../db/db"
 import * as fs from "fs/promises"
-import { ITopoJson } from "../../interfaces/json/interfaceTopoJson"
-import { ICirconscription } from "../../interfaces/json/interfaceCirconscription"
+import { IQCTopoJson } from "../../interfaces/json/quebec/interfaceTopoJson"
+import { IQCCirconscription } from "../../interfaces/json/quebec/interfaceCirconscription"
 
 const collectionName = "QuebecMap-2018"
 
@@ -25,12 +25,12 @@ const PartyColors: IPartyColors = {
 
 /**
  * This function adds the color of the winner in the region to the topoJson circoncription data
- * @param {ITopoJson} topoJson 
+ * @param {IQCTopoJson} topoJson 
  */
-async function addWinnersColor(topoJson: ITopoJson) {
+async function addWinnersColor(topoJson: IQCTopoJson) {
     // Read topoJson file
     let generalResults = await fs.readFile(circonscriptionPathJSON)
-    let data: ICirconscription[] = JSON.parse(generalResults.toString()) as ICirconscription[]
+    let data: IQCCirconscription[] = JSON.parse(generalResults.toString()) as IQCCirconscription[]
     data.forEach((circo) => {
         circo.candidats.sort((candidat, candidat2) => {
             return candidat.tauxVote > candidat2.tauxVote ? 1 : 0
@@ -61,7 +61,7 @@ async function savetopojsonToDB() {
     try {
         // Read topoJson file
         let rawData = await fs.readFile(mapPathJSON)
-        let topoJson: ITopoJson = JSON.parse(rawData.toString());
+        let topoJson: IQCTopoJson = JSON.parse(rawData.toString());
         console.log("GOT JSON")
         await addWinnersColor(topoJson)
         const db = new DB()

@@ -2,22 +2,39 @@
 ### Davit Voskerchyan
 ### [davitvoskerchyan@outlook.com](mailto:davitvokserchyan@outlook.com)
 
-# DESCRIPTION
+## DESCRIPTION
 <p>
-Using the MERN stack, as a team we created the Quebec 2022 Election results. <br>
-https://gitlab.com/520-01-F22/section01/projteam03/dabbaghian-voskerchyan-yildirim/-/tree/staging.<br> We used a ESLinter to have standarzied code ovcer all developers. We also used a basic CI/CD pipeline to ensure all our tests, eslint and build commands function<br>
+Using the MERN stack, I lead my team to create the Quebec 2022 Election results visualizer. <br>
+We used a ESLinter to have standarzied code with all developers. We also used a basic CI/CD pipeline to ensure all our tests, eslint and build commands are passed.
+
+ https://gitlab.com/520-01-F22/section01/projteam03/dabbaghian-voskerchyan-yildirim/-/tree/staging.
+
 </p>
+
+## What I Did?
 <p>
-<b>
-I redid the whole project using TypeScript and Vite and Redis for server side caching</b> <br>
-During my development, I optomized the code and made it cleaner. 
-I also made it more modular to be able to include other election data in the future. <br>
-I than deployed it to railway.app. <br>
+I led the team to create the Quebec 2022 Election results visualizer. <br>
+I redid the project using Typescript for both backend and frontend. <br>
+I optomized and modularized the code to make it more readable and easier to maintain of mine and my teammates. 
 <br>
+
+##### The Frontend was done with React using Vite, TailwindCSS, and some viusalization libraries (react-simple-maps & recharts). <br>
+I added 2018 Quebec election results.
+I added 2020 British-Columbia election results.
+I used react-router-dom to create the routes for the different provinces and its election years.
+
+##### The Backend was done with NodeJS, Express, and MongoDB.
+I used Redis to cache the results of the API calls.
+I created Scripts to be save the data to the database.
 </p>
 
 ## Website
 https://elections.up.railway.app/
+https://elections-md6y.onrender.com/
+
+## To Create a Map
+1. Import Electoral Districts shapefile to https://mapshaper.org/
+2. Use $ proj wgs84 commmand to convert the shapefile to WGS84
 
 # Set Up - Local
 
@@ -34,14 +51,14 @@ https://elections.up.railway.app/
 
     - The error should contain something like "startswith...".
 
-
 5. Run the following commands:
 
-- npm run build
-- node ./server/util/generalResultIntertion.js
-- node ./server/util/insertDataScript.js
-- node ./server/util/saveTopoJsonToMongo.cjs
-- npm run start
+    1. npm run build
+    2. cd ./server/util/quebec
+    3. ts-node addDistrictsToDB.ts
+    4. ts-node addMapDataToDB.ts
+    5. Repeat step 2-4 for each state and its election years by changing the paths;
+6. npm run start
 
 6. Open http://localhost:3001 to view it in the browser.
 
