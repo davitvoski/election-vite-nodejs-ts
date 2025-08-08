@@ -17,7 +17,8 @@
     "express": "^4.18.2",
     "linq-to-typescript": "^10.0.0",
     "mongodb": "^4.12.1",
-    "redis": "^4.5.1"
+    "redis": "^4.5.1",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",

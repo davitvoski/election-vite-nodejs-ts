@@ -44,9 +44,7 @@ async function getTopoJsonDataFromMongo(collectionName: string): Promise<any> {
     } catch (err) {
         throw new Error(err as string)
     }
-}
-
-/**
+}/**
  * This method gets All Circonscriptions from database.
  * @returns {Promise<IQCCirconscription[]>} Promise of All circonscription data
  */
