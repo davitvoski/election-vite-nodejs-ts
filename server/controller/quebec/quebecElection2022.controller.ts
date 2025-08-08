@@ -14,15 +14,18 @@ async function getMap_2022(_: express.Request, res: express.Response) {
     const colectionName = "QuebecMap-2022"
     try {
         let topoJson: string | null | IQCTopoJson = await redisClient.get("QuebecMap2022")
-        if (topoJson == null) {
+
+        if (topoJson == null || topoJson == 'null') {
             // Get Data From Database
             topoJson = await dbController.getTopoJsonDataFromMongo(colectionName)
             // Cache map
+            console.log("Caching TopoJson data for Quebec 2022 election")
             redisClient.set("QuebecMap2022", JSON.stringify(topoJson), {
                 EX: 60 * 60 * 24,
                 NX: true
             })
         } else {
+            console.log("Parsing TopoJson data from redis client")
             topoJson = JSON.parse(topoJson)
         }
         res.status(200).json(topoJson)
