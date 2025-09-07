@@ -7,13 +7,15 @@ import quebecElectionRouter from "./routes/quebecElection.router"
 import britishColombiaElectionRouter from "./routes/british-colombiaElection.router"
 
 const pwd: string = process.env.REDIS_PASSWORD as string
+const redis_url: string = (process.env.REDIS_URL as string).split(":")[0]
+const redis_port: string = (process.env.REDIS_URL as string).split(":")[1]
 
 const redisClient = redis.createClient({
     username: 'default',
     password: pwd,
     socket: {
-        host: 'redis-19096.c258.us-east-1-4.ec2.redns.redis-cloud.com',
-        port: 19096
+        host: redis_url,
+        port: redis_port
     }
 });
 
