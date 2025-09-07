@@ -8,7 +8,7 @@ import britishColombiaElectionRouter from "./routes/british-colombiaElection.rou
 
 const pwd: string = process.env.REDIS_PASSWORD as string
 const redis_url: string = (process.env.REDIS_URL as string).split(":")[0]
-const redis_port: string = (process.env.REDIS_URL as string).split(":")[1]
+const redis_port: number = Number((process.env.REDIS_URL as string).split(":")[1])
 
 const redisClient = redis.createClient({
     username: 'default',
